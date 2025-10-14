@@ -27,7 +27,7 @@
     "@tailwindcss/postcss": "4.1.14",
     "@types/node": "24.7.2",
     "@types/react": "19.2.2",
-    "@types/react-dom": "19.2.1",
+    "@types/react-dom": "19.2.2",
     "@types/web-bluetooth": "0.0.21",
     "eslint": "9.37.0",
     "eslint-config-next": "15.5.4",
