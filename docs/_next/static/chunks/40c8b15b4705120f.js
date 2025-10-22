@@ -1,0 +1,1078 @@
+(globalThis.TURBOPACK || (globalThis.TURBOPACK = [])).push([
+  'object' == typeof document ? document.currentScript : void 0,
+  25402,
+  (e, t, r) => {
+    var n = {
+        229: function (e) {
+          var t,
+            r,
+            n,
+            o = (e.exports = {});
+          function u() {
+            throw Error('setTimeout has not been defined');
+          }
+          function i() {
+            throw Error('clearTimeout has not been defined');
+          }
+          try {
+            t = 'function' == typeof setTimeout ? setTimeout : u;
+          } catch (e) {
+            t = u;
+          }
+          try {
+            r = 'function' == typeof clearTimeout ? clearTimeout : i;
+          } catch (e) {
+            r = i;
+          }
+          function s(e) {
+            if (t === setTimeout) return setTimeout(e, 0);
+            if ((t === u || !t) && setTimeout)
+              return ((t = setTimeout), setTimeout(e, 0));
+            try {
+              return t(e, 0);
+            } catch (r) {
+              try {
+                return t.call(null, e, 0);
+              } catch (r) {
+                return t.call(this, e, 0);
+              }
+            }
+          }
+          var c = [],
+            a = !1,
+            l = -1;
+          function f() {
+            a &&
+              n &&
+              ((a = !1),
+              n.length ? (c = n.concat(c)) : (l = -1),
+              c.length && d());
+          }
+          function d() {
+            if (!a) {
+              var e = s(f);
+              a = !0;
+              for (var t = c.length; t; ) {
+                for (n = c, c = []; ++l < t; ) n && n[l].run();
+                ((l = -1), (t = c.length));
+              }
+              ((n = null),
+                (a = !1),
+                (function (e) {
+                  if (r === clearTimeout) return clearTimeout(e);
+                  if ((r === i || !r) && clearTimeout)
+                    return ((r = clearTimeout), clearTimeout(e));
+                  try {
+                    r(e);
+                  } catch (t) {
+                    try {
+                      return r.call(null, e);
+                    } catch (t) {
+                      return r.call(this, e);
+                    }
+                  }
+                })(e));
+            }
+          }
+          function p(e, t) {
+            ((this.fun = e), (this.array = t));
+          }
+          function y() {}
+          ((o.nextTick = function (e) {
+            var t = Array(arguments.length - 1);
+            if (arguments.length > 1)
+              for (var r = 1; r < arguments.length; r++)
+                t[r - 1] = arguments[r];
+            (c.push(new p(e, t)), 1 !== c.length || a || s(d));
+          }),
+            (p.prototype.run = function () {
+              this.fun.apply(null, this.array);
+            }),
+            (o.title = 'browser'),
+            (o.browser = !0),
+            (o.env = {}),
+            (o.argv = []),
+            (o.version = ''),
+            (o.versions = {}),
+            (o.on = y),
+            (o.addListener = y),
+            (o.once = y),
+            (o.off = y),
+            (o.removeListener = y),
+            (o.removeAllListeners = y),
+            (o.emit = y),
+            (o.prependListener = y),
+            (o.prependOnceListener = y),
+            (o.listeners = function (e) {
+              return [];
+            }),
+            (o.binding = function (e) {
+              throw Error('process.binding is not supported');
+            }),
+            (o.cwd = function () {
+              return '/';
+            }),
+            (o.chdir = function (e) {
+              throw Error('process.chdir is not supported');
+            }),
+            (o.umask = function () {
+              return 0;
+            }));
+        },
+      },
+      o = {};
+    function u(e) {
+      var t = o[e];
+      if (void 0 !== t) return t.exports;
+      var r = (o[e] = { exports: {} }),
+        i = !0;
+      try {
+        (n[e](r, r.exports, u), (i = !1));
+      } finally {
+        i && delete o[e];
+      }
+      return r.exports;
+    }
+    ((u.ab =
+      '/ROOT/node_modules/.pnpm/next@16.0.0_@babel+core@7.28.4_react-dom@19.2.0_react@19.2.0__react@19.2.0/node_modules/next/dist/compiled/process/'),
+      (t.exports = u(229)));
+  },
+  59779,
+  (e, t, r) => {
+    'use strict';
+    var n, o;
+    t.exports =
+      (null == (n = e.g.process) ? void 0 : n.env) &&
+      'object' == typeof (null == (o = e.g.process) ? void 0 : o.env)
+        ? e.g.process
+        : e.r(25402);
+  },
+  86234,
+  (e, t, r) => {
+    'use strict';
+    var n = Symbol.for('react.transitional.element');
+    function o(e, t, r) {
+      var o = null;
+      if (
+        (void 0 !== r && (o = '' + r),
+        void 0 !== t.key && (o = '' + t.key),
+        'key' in t)
+      )
+        for (var u in ((r = {}), t)) 'key' !== u && (r[u] = t[u]);
+      else r = t;
+      return {
+        $$typeof: n,
+        type: e,
+        key: o,
+        ref: void 0 !== (t = r.ref) ? t : null,
+        props: r,
+      };
+    }
+    ((r.Fragment = Symbol.for('react.fragment')), (r.jsx = o), (r.jsxs = o));
+  },
+  94601,
+  (e, t, r) => {
+    'use strict';
+    t.exports = e.r(86234);
+  },
+  14513,
+  (e, t, r) => {
+    'use strict';
+    var n = e.i(59779),
+      o = Symbol.for('react.transitional.element'),
+      u = Symbol.for('react.portal'),
+      i = Symbol.for('react.fragment'),
+      s = Symbol.for('react.strict_mode'),
+      c = Symbol.for('react.profiler'),
+      a = Symbol.for('react.consumer'),
+      l = Symbol.for('react.context'),
+      f = Symbol.for('react.forward_ref'),
+      d = Symbol.for('react.suspense'),
+      p = Symbol.for('react.memo'),
+      y = Symbol.for('react.lazy'),
+      m = Symbol.for('react.activity'),
+      h = Symbol.iterator,
+      v = {
+        isMounted: function () {
+          return !1;
+        },
+        enqueueForceUpdate: function () {},
+        enqueueReplaceState: function () {},
+        enqueueSetState: function () {},
+      },
+      b = Object.assign,
+      g = {};
+    function _(e, t, r) {
+      ((this.props = e),
+        (this.context = t),
+        (this.refs = g),
+        (this.updater = r || v));
+    }
+    function w() {}
+    function x(e, t, r) {
+      ((this.props = e),
+        (this.context = t),
+        (this.refs = g),
+        (this.updater = r || v));
+    }
+    ((_.prototype.isReactComponent = {}),
+      (_.prototype.setState = function (e, t) {
+        if ('object' != typeof e && 'function' != typeof e && null != e)
+          throw Error(
+            'takes an object of state variables to update or a function which returns an object of state variables.'
+          );
+        this.updater.enqueueSetState(this, e, t, 'setState');
+      }),
+      (_.prototype.forceUpdate = function (e) {
+        this.updater.enqueueForceUpdate(this, e, 'forceUpdate');
+      }),
+      (w.prototype = _.prototype));
+    var E = (x.prototype = new w());
+    ((E.constructor = x), b(E, _.prototype), (E.isPureReactComponent = !0));
+    var j = Array.isArray;
+    function S() {}
+    var N = { H: null, A: null, T: null, S: null },
+      T = Object.prototype.hasOwnProperty;
+    function O(e, t, r) {
+      var n = r.ref;
+      return {
+        $$typeof: o,
+        type: e,
+        key: t,
+        ref: void 0 !== n ? n : null,
+        props: r,
+      };
+    }
+    function P(e) {
+      return 'object' == typeof e && null !== e && e.$$typeof === o;
+    }
+    var k = /\/+/g;
+    function C(e, t) {
+      var r, n;
+      return 'object' == typeof e && null !== e && null != e.key
+        ? ((r = '' + e.key),
+          (n = { '=': '=0', ':': '=2' }),
+          '$' +
+            r.replace(/[=:]/g, function (e) {
+              return n[e];
+            }))
+        : t.toString(36);
+    }
+    function $(e, t, r) {
+      if (null == e) return e;
+      var n = [],
+        i = 0;
+      return (
+        !(function e(t, r, n, i, s) {
+          var c,
+            a,
+            l,
+            f = typeof t;
+          ('undefined' === f || 'boolean' === f) && (t = null);
+          var d = !1;
+          if (null === t) d = !0;
+          else
+            switch (f) {
+              case 'bigint':
+              case 'string':
+              case 'number':
+                d = !0;
+                break;
+              case 'object':
+                switch (t.$$typeof) {
+                  case o:
+                  case u:
+                    d = !0;
+                    break;
+                  case y:
+                    return e((d = t._init)(t._payload), r, n, i, s);
+                }
+            }
+          if (d)
+            return (
+              (s = s(t)),
+              (d = '' === i ? '.' + C(t, 0) : i),
+              j(s)
+                ? ((n = ''),
+                  null != d && (n = d.replace(k, '$&/') + '/'),
+                  e(s, r, n, '', function (e) {
+                    return e;
+                  }))
+                : null != s &&
+                  (P(s) &&
+                    ((c = s),
+                    (a =
+                      n +
+                      (null == s.key || (t && t.key === s.key)
+                        ? ''
+                        : ('' + s.key).replace(k, '$&/') + '/') +
+                      d),
+                    (s = O(c.type, a, c.props))),
+                  r.push(s)),
+              1
+            );
+          d = 0;
+          var p = '' === i ? '.' : i + ':';
+          if (j(t))
+            for (var m = 0; m < t.length; m++)
+              ((f = p + C((i = t[m]), m)), (d += e(i, r, n, f, s)));
+          else if (
+            'function' ==
+            typeof (m =
+              null === (l = t) || 'object' != typeof l
+                ? null
+                : 'function' == typeof (l = (h && l[h]) || l['@@iterator'])
+                  ? l
+                  : null)
+          )
+            for (t = m.call(t), m = 0; !(i = t.next()).done; )
+              ((f = p + C((i = i.value), m++)), (d += e(i, r, n, f, s)));
+          else if ('object' === f) {
+            if ('function' == typeof t.then)
+              return e(
+                (function (e) {
+                  switch (e.status) {
+                    case 'fulfilled':
+                      return e.value;
+                    case 'rejected':
+                      throw e.reason;
+                    default:
+                      switch (
+                        ('string' == typeof e.status
+                          ? e.then(S, S)
+                          : ((e.status = 'pending'),
+                            e.then(
+                              function (t) {
+                                'pending' === e.status &&
+                                  ((e.status = 'fulfilled'), (e.value = t));
+                              },
+                              function (t) {
+                                'pending' === e.status &&
+                                  ((e.status = 'rejected'), (e.reason = t));
+                              }
+                            )),
+                        e.status)
+                      ) {
+                        case 'fulfilled':
+                          return e.value;
+                        case 'rejected':
+                          throw e.reason;
+                      }
+                  }
+                  throw e;
+                })(t),
+                r,
+                n,
+                i,
+                s
+              );
+            throw Error(
+              'Objects are not valid as a React child (found: ' +
+                ('[object Object]' === (r = String(t))
+                  ? 'object with keys {' + Object.keys(t).join(', ') + '}'
+                  : r) +
+                '). If you meant to render a collection of children, use an array instead.'
+            );
+          }
+          return d;
+        })(e, n, '', '', function (e) {
+          return t.call(r, e, i++);
+        }),
+        n
+      );
+    }
+    function R(e) {
+      if (-1 === e._status) {
+        var t = e._result;
+        ((t = t()).then(
+          function (t) {
+            (0 === e._status || -1 === e._status) &&
+              ((e._status = 1), (e._result = t));
+          },
+          function (t) {
+            (0 === e._status || -1 === e._status) &&
+              ((e._status = 2), (e._result = t));
+          }
+        ),
+          -1 === e._status && ((e._status = 0), (e._result = t)));
+      }
+      if (1 === e._status) return e._result.default;
+      throw e._result;
+    }
+    var M =
+      'function' == typeof reportError
+        ? reportError
+        : function (e) {
+            if (
+              'object' == typeof window &&
+              'function' == typeof window.ErrorEvent
+            ) {
+              var t = new window.ErrorEvent('error', {
+                bubbles: !0,
+                cancelable: !0,
+                message:
+                  'object' == typeof e &&
+                  null !== e &&
+                  'string' == typeof e.message
+                    ? String(e.message)
+                    : String(e),
+                error: e,
+              });
+              if (!window.dispatchEvent(t)) return;
+            } else if (
+              'object' == typeof n.default &&
+              'function' == typeof n.default.emit
+            )
+              return void n.default.emit('uncaughtException', e);
+            console.error(e);
+          };
+    ((r.Activity = m),
+      (r.Children = {
+        map: $,
+        forEach: function (e, t, r) {
+          $(
+            e,
+            function () {
+              t.apply(this, arguments);
+            },
+            r
+          );
+        },
+        count: function (e) {
+          var t = 0;
+          return (
+            $(e, function () {
+              t++;
+            }),
+            t
+          );
+        },
+        toArray: function (e) {
+          return (
+            $(e, function (e) {
+              return e;
+            }) || []
+          );
+        },
+        only: function (e) {
+          if (!P(e))
+            throw Error(
+              'React.Children.only expected to receive a single React element child.'
+            );
+          return e;
+        },
+      }),
+      (r.Component = _),
+      (r.Fragment = i),
+      (r.Profiler = c),
+      (r.PureComponent = x),
+      (r.StrictMode = s),
+      (r.Suspense = d),
+      (r.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE = N),
+      (r.__COMPILER_RUNTIME = {
+        __proto__: null,
+        c: function (e) {
+          return N.H.useMemoCache(e);
+        },
+      }),
+      (r.cache = function (e) {
+        return function () {
+          return e.apply(null, arguments);
+        };
+      }),
+      (r.cacheSignal = function () {
+        return null;
+      }),
+      (r.cloneElement = function (e, t, r) {
+        if (null == e)
+          throw Error(
+            'The argument must be a React element, but you passed ' + e + '.'
+          );
+        var n = b({}, e.props),
+          o = e.key;
+        if (null != t)
+          for (u in (void 0 !== t.key && (o = '' + t.key), t))
+            T.call(t, u) &&
+              'key' !== u &&
+              '__self' !== u &&
+              '__source' !== u &&
+              ('ref' !== u || void 0 !== t.ref) &&
+              (n[u] = t[u]);
+        var u = arguments.length - 2;
+        if (1 === u) n.children = r;
+        else if (1 < u) {
+          for (var i = Array(u), s = 0; s < u; s++) i[s] = arguments[s + 2];
+          n.children = i;
+        }
+        return O(e.type, o, n);
+      }),
+      (r.createContext = function (e) {
+        return (
+          ((e = {
+            $$typeof: l,
+            _currentValue: e,
+            _currentValue2: e,
+            _threadCount: 0,
+            Provider: null,
+            Consumer: null,
+          }).Provider = e),
+          (e.Consumer = { $$typeof: a, _context: e }),
+          e
+        );
+      }),
+      (r.createElement = function (e, t, r) {
+        var n,
+          o = {},
+          u = null;
+        if (null != t)
+          for (n in (void 0 !== t.key && (u = '' + t.key), t))
+            T.call(t, n) &&
+              'key' !== n &&
+              '__self' !== n &&
+              '__source' !== n &&
+              (o[n] = t[n]);
+        var i = arguments.length - 2;
+        if (1 === i) o.children = r;
+        else if (1 < i) {
+          for (var s = Array(i), c = 0; c < i; c++) s[c] = arguments[c + 2];
+          o.children = s;
+        }
+        if (e && e.defaultProps)
+          for (n in (i = e.defaultProps)) void 0 === o[n] && (o[n] = i[n]);
+        return O(e, u, o);
+      }),
+      (r.createRef = function () {
+        return { current: null };
+      }),
+      (r.forwardRef = function (e) {
+        return { $$typeof: f, render: e };
+      }),
+      (r.isValidElement = P),
+      (r.lazy = function (e) {
+        return { $$typeof: y, _payload: { _status: -1, _result: e }, _init: R };
+      }),
+      (r.memo = function (e, t) {
+        return { $$typeof: p, type: e, compare: void 0 === t ? null : t };
+      }),
+      (r.startTransition = function (e) {
+        var t = N.T,
+          r = {};
+        N.T = r;
+        try {
+          var n = e(),
+            o = N.S;
+          (null !== o && o(r, n),
+            'object' == typeof n &&
+              null !== n &&
+              'function' == typeof n.then &&
+              n.then(S, M));
+        } catch (e) {
+          M(e);
+        } finally {
+          (null !== t && null !== r.types && (t.types = r.types), (N.T = t));
+        }
+      }),
+      (r.unstable_useCacheRefresh = function () {
+        return N.H.useCacheRefresh();
+      }),
+      (r.use = function (e) {
+        return N.H.use(e);
+      }),
+      (r.useActionState = function (e, t, r) {
+        return N.H.useActionState(e, t, r);
+      }),
+      (r.useCallback = function (e, t) {
+        return N.H.useCallback(e, t);
+      }),
+      (r.useContext = function (e) {
+        return N.H.useContext(e);
+      }),
+      (r.useDebugValue = function () {}),
+      (r.useDeferredValue = function (e, t) {
+        return N.H.useDeferredValue(e, t);
+      }),
+      (r.useEffect = function (e, t) {
+        return N.H.useEffect(e, t);
+      }),
+      (r.useEffectEvent = function (e) {
+        return N.H.useEffectEvent(e);
+      }),
+      (r.useId = function () {
+        return N.H.useId();
+      }),
+      (r.useImperativeHandle = function (e, t, r) {
+        return N.H.useImperativeHandle(e, t, r);
+      }),
+      (r.useInsertionEffect = function (e, t) {
+        return N.H.useInsertionEffect(e, t);
+      }),
+      (r.useLayoutEffect = function (e, t) {
+        return N.H.useLayoutEffect(e, t);
+      }),
+      (r.useMemo = function (e, t) {
+        return N.H.useMemo(e, t);
+      }),
+      (r.useOptimistic = function (e, t) {
+        return N.H.useOptimistic(e, t);
+      }),
+      (r.useReducer = function (e, t, r) {
+        return N.H.useReducer(e, t, r);
+      }),
+      (r.useRef = function (e) {
+        return N.H.useRef(e);
+      }),
+      (r.useState = function (e) {
+        return N.H.useState(e);
+      }),
+      (r.useSyncExternalStore = function (e, t, r) {
+        return N.H.useSyncExternalStore(e, t, r);
+      }),
+      (r.useTransition = function () {
+        return N.H.useTransition();
+      }),
+      (r.version = '19.2.0'));
+  },
+  36960,
+  (e, t, r) => {
+    'use strict';
+    t.exports = e.r(14513);
+  },
+  1143,
+  98387,
+  (e) => {
+    'use strict';
+    (e.s(
+      [
+        'addZero',
+        0,
+        (e, t = 2) => {
+          let r = e.toString().length;
+          return `${'0'.repeat(t >= r ? t - r : 0)}${e}`;
+        },
+      ],
+      98387
+    ),
+      e.s(
+        [
+          'ONE_SECOND',
+          0,
+          1e3,
+          'getNumberOfDaysPerMonth',
+          0,
+          (e) => [
+            31,
+            1 === new Date(e, 1, 29).getMonth() ? 29 : 28,
+            31,
+            30,
+            31,
+            30,
+            31,
+            31,
+            30,
+            31,
+            30,
+            31,
+          ],
+          'getOrdinalSuffix',
+          0,
+          (e) => {
+            let t = e % 10,
+              r = e % 100;
+            return 1 === t && 11 !== r
+              ? 'st'
+              : 2 === t && 12 !== r
+                ? 'nd'
+                : 3 === t && 13 !== r
+                  ? 'rd'
+                  : 'th';
+          },
+          'months',
+          0,
+          [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December',
+          ],
+          'shortMonths',
+          0,
+          [
+            'Jan',
+            'Feb',
+            'Mar',
+            'Apr',
+            'May',
+            'Jun',
+            'Jul',
+            'Aug',
+            'Sep',
+            'Oct',
+            'Nov',
+            'Dec',
+          ],
+          'weekdays',
+          0,
+          [
+            'Sunday',
+            'Monday',
+            'Tuesday',
+            'Wednesday',
+            'Thursday',
+            'Friday',
+            'Saturday',
+          ],
+        ],
+        1143
+      ));
+  },
+  2879,
+  (e, t, r) => {
+    'use strict';
+    r._ = function (e) {
+      return e && e.__esModule ? e : { default: e };
+    };
+  },
+  87602,
+  (e, t, r) => {
+    'use strict';
+    function n(e) {
+      if ('function' != typeof WeakMap) return null;
+      var t = new WeakMap(),
+        r = new WeakMap();
+      return (n = function (e) {
+        return e ? r : t;
+      })(e);
+    }
+    r._ = function (e, t) {
+      if (!t && e && e.__esModule) return e;
+      if (null === e || ('object' != typeof e && 'function' != typeof e))
+        return { default: e };
+      var r = n(t);
+      if (r && r.has(e)) return r.get(e);
+      var o = { __proto__: null },
+        u = Object.defineProperty && Object.getOwnPropertyDescriptor;
+      for (var i in e)
+        if ('default' !== i && Object.prototype.hasOwnProperty.call(e, i)) {
+          var s = u ? Object.getOwnPropertyDescriptor(e, i) : null;
+          s && (s.get || s.set)
+            ? Object.defineProperty(o, i, s)
+            : (o[i] = e[i]);
+        }
+      return ((o.default = e), r && r.set(e, o), o);
+    };
+  },
+  88065,
+  (e, t, r) => {
+    'use strict';
+    (Object.defineProperty(r, '__esModule', { value: !0 }),
+      Object.defineProperty(r, 'HeadManagerContext', {
+        enumerable: !0,
+        get: function () {
+          return n;
+        },
+      }));
+    let n = e.r(2879)._(e.r(36960)).default.createContext({});
+  },
+  98114,
+  (e, t, r) => {
+    'use strict';
+    (Object.defineProperty(r, '__esModule', { value: !0 }),
+      Object.defineProperty(r, 'warnOnce', {
+        enumerable: !0,
+        get: function () {
+          return n;
+        },
+      }));
+    let n = (e) => {};
+  },
+  53790,
+  (e, t, r) => {
+    'use strict';
+    Object.defineProperty(r, '__esModule', { value: !0 });
+    var n = {
+      DecodeError: function () {
+        return v;
+      },
+      MiddlewareNotFoundError: function () {
+        return w;
+      },
+      MissingStaticPage: function () {
+        return _;
+      },
+      NormalizeError: function () {
+        return b;
+      },
+      PageNotFoundError: function () {
+        return g;
+      },
+      SP: function () {
+        return m;
+      },
+      ST: function () {
+        return h;
+      },
+      WEB_VITALS: function () {
+        return u;
+      },
+      execOnce: function () {
+        return i;
+      },
+      getDisplayName: function () {
+        return f;
+      },
+      getLocationOrigin: function () {
+        return a;
+      },
+      getURL: function () {
+        return l;
+      },
+      isAbsoluteUrl: function () {
+        return c;
+      },
+      isResSent: function () {
+        return d;
+      },
+      loadGetInitialProps: function () {
+        return y;
+      },
+      normalizeRepeatedSlashes: function () {
+        return p;
+      },
+      stringifyError: function () {
+        return x;
+      },
+    };
+    for (var o in n) Object.defineProperty(r, o, { enumerable: !0, get: n[o] });
+    let u = ['CLS', 'FCP', 'FID', 'INP', 'LCP', 'TTFB'];
+    function i(e) {
+      let t,
+        r = !1;
+      return (...n) => (r || ((r = !0), (t = e(...n))), t);
+    }
+    let s = /^[a-zA-Z][a-zA-Z\d+\-.]*?:/,
+      c = (e) => s.test(e);
+    function a() {
+      let { protocol: e, hostname: t, port: r } = window.location;
+      return `${e}//${t}${r ? ':' + r : ''}`;
+    }
+    function l() {
+      let { href: e } = window.location,
+        t = a();
+      return e.substring(t.length);
+    }
+    function f(e) {
+      return 'string' == typeof e ? e : e.displayName || e.name || 'Unknown';
+    }
+    function d(e) {
+      return e.finished || e.headersSent;
+    }
+    function p(e) {
+      let t = e.split('?');
+      return (
+        t[0].replace(/\\/g, '/').replace(/\/\/+/g, '/') +
+        (t[1] ? `?${t.slice(1).join('?')}` : '')
+      );
+    }
+    async function y(e, t) {
+      let r = t.res || (t.ctx && t.ctx.res);
+      if (!e.getInitialProps)
+        return t.ctx && t.Component
+          ? { pageProps: await y(t.Component, t.ctx) }
+          : {};
+      let n = await e.getInitialProps(t);
+      if (r && d(r)) return n;
+      if (!n)
+        throw Object.defineProperty(
+          Error(
+            `"${f(e)}.getInitialProps()" should resolve to an object. But found "${n}" instead.`
+          ),
+          '__NEXT_ERROR_CODE',
+          { value: 'E394', enumerable: !1, configurable: !0 }
+        );
+      return n;
+    }
+    let m = 'undefined' != typeof performance,
+      h =
+        m &&
+        ['mark', 'measure', 'getEntriesByName'].every(
+          (e) => 'function' == typeof performance[e]
+        );
+    class v extends Error {}
+    class b extends Error {}
+    class g extends Error {
+      constructor(e) {
+        (super(),
+          (this.code = 'ENOENT'),
+          (this.name = 'PageNotFoundError'),
+          (this.message = `Cannot find module for page: ${e}`));
+      }
+    }
+    class _ extends Error {
+      constructor(e, t) {
+        (super(),
+          (this.message = `Failed to load static file for page: ${e} ${t}`));
+      }
+    }
+    class w extends Error {
+      constructor() {
+        (super(),
+          (this.code = 'ENOENT'),
+          (this.message = 'Cannot find the middleware module'));
+      }
+    }
+    function x(e) {
+      return JSON.stringify({ message: e.message, stack: e.stack });
+    }
+  },
+  4886,
+  (e) => {
+    'use strict';
+    var t = e.i(94601),
+      r = e.i(1143);
+    e.s([
+      'WidgetNews',
+      0,
+      () =>
+        (0, t.jsx)('div', {
+          className:
+            'shadow-3xl relative aspect-square w-full max-w-60 overflow-hidden rounded-3xl bg-neutral-900 text-neutral-100',
+          children: (0, t.jsx)('div', {
+            className: 'h-full w-full p-6',
+            children: (0, t.jsxs)('div', {
+              className: 'flex h-full flex-col',
+              children: [
+                (0, t.jsxs)('div', {
+                  className: 'flex items-center justify-between pb-2',
+                  children: [
+                    (0, t.jsx)('p', {
+                      className: 'text-xl font-black text-red-500',
+                      children: 'News',
+                    }),
+                    (0, t.jsxs)('p', {
+                      children: [
+                        r.shortMonths[new Date().getMonth() + 1],
+                        ' ',
+                        new Date().getDate(),
+                      ],
+                    }),
+                  ],
+                }),
+                [
+                  {
+                    title: 'Lorem ipsum',
+                    content:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut. ',
+                    source: 'CNN',
+                  },
+                  {
+                    title: 'Lorem ipsum',
+                    content:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut. ',
+                    source: 'CNBC',
+                  },
+                  {
+                    title: 'Lorem ipsum',
+                    content:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut. ',
+                    source: 'BBC',
+                  },
+                ].map(({ title: e, content: r, source: n }) =>
+                  (0, t.jsx)(
+                    'div',
+                    {
+                      className: 'grow border-t border-neutral-700',
+                      children: (0, t.jsx)('div', {
+                        className: 'flex h-full w-full items-center',
+                        children: (0, t.jsxs)('div', {
+                          className: 'w-full',
+                          children: [
+                            (0, t.jsxs)('div', {
+                              className:
+                                'flex w-full items-center justify-between',
+                              children: [
+                                (0, t.jsx)('p', {
+                                  className: 'text-sm font-bold',
+                                  children: e,
+                                }),
+                                (0, t.jsx)('p', {
+                                  className: 'text-xs',
+                                  children: n,
+                                }),
+                              ],
+                            }),
+                            (0, t.jsx)('p', {
+                              className:
+                                'w-44 truncate text-sm text-neutral-500',
+                              children: r,
+                            }),
+                          ],
+                        }),
+                      }),
+                    },
+                    e
+                  )
+                ),
+              ],
+            }),
+          }),
+        }),
+    ]);
+  },
+  5838,
+  (e) => {
+    'use strict';
+    var t = e.i(94601),
+      r = e.i(4886);
+    e.s([
+      'default',
+      0,
+      () =>
+        (0, t.jsx)('div', {
+          className: 'h-screen w-screen overflow-hidden bg-neutral-100',
+          children: (0, t.jsx)('div', {
+            className: 'grid h-full grid-cols-1',
+            children: (0, t.jsx)('div', {
+              className: 'col-span-1',
+              children: (0, t.jsx)('div', {
+                className: 'flex h-full items-center justify-center',
+                children: (0, t.jsx)(r.WidgetNews, {}),
+              }),
+            }),
+          }),
+        }),
+    ]);
+  },
+  99392,
+  (e, t, r) => {
+    let n = '/news';
+    ((window.__NEXT_P = window.__NEXT_P || []).push([n, () => e.r(5838)]),
+      t.hot &&
+        t.hot.dispose(function () {
+          window.__NEXT_P.push([n]);
+        }));
+  },
+  17114,
+  (e) => {
+    e.v((t) =>
+      Promise.all(
+        ['static/chunks/523efaa38418c493.js'].map((t) => e.l(t))
+      ).then(() => t(91201))
+    );
+  },
+  78093,
+  (e) => {
+    e.v((t) =>
+      Promise.all(
+        ['static/chunks/6b7b41fb629bfec1.js'].map((t) => e.l(t))
+      ).then(() => t(22314))
+    );
+  },
+]);
