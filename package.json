@@ -1,42 +1,29 @@
 {
-  "name": "nothing.tech",
+  "name": "@nothing/tech",
   "version": "0.0.1",
-  "private": true,
-  "packageManager": "pnpm@10.22.0",
-  "scripts": {
-    "predev": "kill-port 3000",
-    "dev": "next dev --turbopack",
-    "prebuild": "rimraf .next",
-    "build": "next build --turbopack",
-    "postbuild": "touch ./docs/.nojekyll",
-    "prestart": "kill-port 3000",
-    "start": "next start",
-    "lint": "eslint",
-    "format": "prettier --cache --write .",
-    "prepare": "husky"
+  "description": "Command Line Interface",
+  "keywords": [
+    "nothing.tech"
+  ],
+  "homepage": "https://github.com/hieudoanm/nothing.tech#readme",
+  "bugs": {
+    "url": "https://github.com/hieudoanm/nothing.tech/issues"
   },
-  "dependencies": {
-    "next": "16.0.3",
-    "pino": "10.1.0",
-    "react": "19.2.0",
-    "react-dom": "19.2.0",
-    "react-icons": "5.5.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hieudoanm/nothing.tech.git"
+  },
+  "license": "GPL-3.0",
+  "author": "hieudoanm <hieumdoan@gmail.com> (https://hieudoanm.github.io)",
+  "packageManager": "pnpm@10.20.0",
+  "scripts": {
+    "lint": "turbo run lint",
+    "build": "turbo run build",
+    "format": "turbo run format",
+    "prepare": "husky || true"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "3.3.1",
-    "@tailwindcss/postcss": "4.1.17",
-    "@types/node": "24.10.1",
-    "@types/react": "19.2.5",
-    "@types/react-dom": "19.2.3",
-    "@types/web-bluetooth": "0.0.21",
-    "eslint": "9.39.1",
-    "eslint-config-next": "16.0.3",
     "husky": "9.1.7",
-    "kill-port": "2.0.1",
-    "prettier": "3.6.2",
-    "prettier-plugin-tailwindcss": "0.7.1",
-    "rimraf": "6.1.0",
-    "tailwindcss": "4.1.17",
-    "typescript": "5.9.3"
+    "turbo": "2.6.1"
   }
 }
