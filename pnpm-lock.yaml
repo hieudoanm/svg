@@ -70,8 +70,8 @@ importers:
         specifier: 0.7.1
         version: 0.7.1(prettier@3.6.2)
       rimraf:
-        specifier: 6.1.0
-        version: 6.1.0
+        specifier: 6.1.2
+        version: 6.1.2
       tailwindcss:
         specifier: 4.1.17
         version: 4.1.17
@@ -88,8 +88,8 @@ importers:
         specifier: 3.6.2
         version: 3.6.2
       rimraf:
-        specifier: 6.1.0
-        version: 6.1.0
+        specifier: 6.1.2
+        version: 6.1.2
 
 packages:
 
@@ -1587,6 +1587,10 @@ packages:
     engines: {node: 20 || >=22}
     hasBin: true
 
+  glob@13.0.0:
+    resolution: {integrity: sha512-tvZgpqk6fz4BaNZ66ZsRaZnbHvP/jG3uKJvAZOwEVUL4RTA5nJeeLYfyN9/VA8NX/V3IBG+hkeuGpKjvELkVhA==}
+    engines: {node: 20 || >=22}
+
   globals@14.0.0:
     resolution: {integrity: sha512-oahGvuMGQlPw/ivIYBjVSrWAfWLBeku5tpPE2fOPLi+WHffIWbuh2tCjhyQhTBPMf5E9jDEH4FOmTYgYwbKwtQ==}
     engines: {node: '>=18'}
@@ -2497,8 +2501,8 @@ packages:
     resolution: {integrity: sha512-g6QUff04oZpHs0eG5p83rFLhHeV00ug/Yf9nZM6fLeUrPguBTkTQOdpAWWspMh55TZfVQDPaN3NQJfbVRAxdIw==}
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
 
-  rimraf@6.1.0:
-    resolution: {integrity: sha512-DxdlA1bdNzkZK7JiNWH+BAx1x4tEJWoTofIopFo6qWUU94jYrFZ0ubY05TqH3nWPJ1nKa1JWVFDINZ3fnrle/A==}
+  rimraf@6.1.2:
+    resolution: {integrity: sha512-cFCkPslJv7BAXJsYlK1dZsbP8/ZNLkCAQ0bi1hf5EKX2QHegmDFEFA6QhuYJlk7UDdc+02JjO80YSOrWPpw06g==}
     engines: {node: 20 || >=22}
     hasBin: true
 
@@ -4773,6 +4777,12 @@ snapshots:
       package-json-from-dist: 1.0.1
       path-scurry: 2.0.1
 
+  glob@13.0.0:
+    dependencies:
+      minimatch: 10.1.1
+      minipass: 7.1.2
+      path-scurry: 2.0.1
+
   globals@14.0.0: {}
 
   globals@16.4.0: {}
@@ -5649,9 +5659,9 @@ snapshots:
 
   reusify@1.1.0: {}
 
-  rimraf@6.1.0:
+  rimraf@6.1.2:
     dependencies:
-      glob: 11.0.3
+      glob: 13.0.0
       package-json-from-dist: 1.0.1
 
   run-applescript@7.1.0: {}
