@@ -15,6 +15,18 @@ importers:
         specifier: 2.6.1
         version: 2.6.1
 
+  packages/extensions/vscode:
+    devDependencies:
+      '@vscode/vsce':
+        specifier: 3.7.1
+        version: 3.7.1
+      prettier:
+        specifier: 3.7.2
+        version: 3.7.2
+      rimraf:
+        specifier: 6.1.2
+        version: 6.1.2
+
   packages/frontend:
     dependencies:
       next:
@@ -78,18 +90,6 @@ importers:
       typescript:
         specifier: 5.9.3
         version: 5.9.3
-
-  packages/vscode:
-    devDependencies:
-      '@vscode/vsce':
-        specifier: 3.7.1
-        version: 3.7.1
-      prettier:
-        specifier: 3.7.2
-        version: 3.7.2
-      rimraf:
-        specifier: 6.1.2
-        version: 6.1.2
 
 packages:
 
