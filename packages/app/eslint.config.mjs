@@ -13,6 +13,8 @@ const eslintConfig = defineConfig([
     'public/workers/**',
     'src-tauri/**',
     'next-env.d.ts',
+    'jest.config.ts',
+    'jest.setup.ts',
   ]),
   {
     rules: {
