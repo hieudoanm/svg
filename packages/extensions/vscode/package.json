@@ -15,7 +15,6 @@
   ],
   "author": "hieudoanm <hieumdoan@gmail.com> (https://hieudoanm.github.io)",
   "license": "GPL-3.0",
-  "packageManager": "pnpm@10.30.3",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/hieudoanm/hieudoanm.github.io.git"
@@ -24,6 +23,7 @@
     "url": "https://github.com/hieudoanm/hieudoanm.github.io/issues"
   },
   "homepage": "https://hieudoanm.github.io/nothing.tech",
+  "packageManager": "pnpm@10.30.3",
   "engines": {
     "node": "25.7.0",
     "vscode": "1.999.0"
