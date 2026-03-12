@@ -86,6 +86,9 @@ self.__BUILD_MANIFEST = {
   "/transportation": [
     "static/chunks/c8db4e497b0318c0.js"
   ],
+  "/version": [
+    "static/chunks/c1fec8ecbb679acb.js"
+  ],
   "/videos": [
     "static/chunks/5e9b12d74e053d07.js"
   ],
@@ -128,6 +131,7 @@ self.__BUILD_MANIFEST = {
     "/tasks",
     "/translate",
     "/transportation",
+    "/version",
     "/videos",
     "/wallet"
   ]
