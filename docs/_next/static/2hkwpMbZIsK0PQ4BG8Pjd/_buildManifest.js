@@ -1,12 +1,15 @@
 self.__BUILD_MANIFEST = {
   "/": [
-    "static/chunks/2aa8922361568f66.js"
+    "static/chunks/8532baef3cbaa8fc.js"
   ],
   "/_error": [
     "static/chunks/21bea7ab040e0430.js"
   ],
   "/all": [
     "static/chunks/6b9e06ab66319d57.js"
+  ],
+  "/app": [
+    "static/chunks/af03d4da8c80b8d2.js"
   ],
   "/browser": [
     "static/chunks/91dde2dcc321bd71.js"
@@ -105,6 +108,7 @@ self.__BUILD_MANIFEST = {
     "/_app",
     "/_error",
     "/all",
+    "/app",
     "/browser",
     "/calculator",
     "/calendar",
