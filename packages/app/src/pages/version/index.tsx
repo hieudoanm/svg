@@ -1,5 +1,5 @@
+import { VersionTemplate } from '@svg/templates/VersionTemplate';
 import { GetStaticProps, NextPage } from 'next';
-import { VersionTemplate } from '@nothing/templates/VersionTemplate';
 
 type Props = {
   version: string;

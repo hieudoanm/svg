@@ -1,17 +1,17 @@
 {
-  "name": "@nothing/tech",
+  "name": "@svg/workspaces",
   "version": "0.0.1",
   "description": "Command Line Interface",
   "keywords": [
-    "nothing.tech"
+    "svg"
   ],
-  "homepage": "https://hieudoanm.github.io/nothing.tech",
+  "homepage": "https://hieudoanm.github.io/svg",
   "bugs": {
-    "url": "https://github.com/hieudoanm/nothing.tech/issues"
+    "url": "https://github.com/hieudoanm/svg/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hieudoanm/nothing.tech.git"
+    "url": "git+https://github.com/hieudoanm/svg.git"
   },
   "license": "GPL-3.0",
   "author": "hieudoanm <hieumdoan@gmail.com> (https://hieudoanm.github.io)",

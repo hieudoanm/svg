@@ -1,8 +1,8 @@
-# 🚀 [Nothing Tech](https://hieudoanm.github.io/nothing.tech/)
+# 🚀 [SVG](https://hieudoanm.github.io/svg/)
 
 ## 📚 Table of Contents
 
-- [🚀 Nothing Tech](#-nothing-tech)
+- [🚀 SVG](#-svg)
   - [📚 Table of Contents](#-table-of-contents)
   - [📖 1. Overview](#-1-overview)
   - [✨ 2. Features](#-2-features)
@@ -31,14 +31,14 @@ Nothing Tech is a focused project in this monorepo that delivers a practical too
 
 ## 🎥 3. Demo
 
-- 🌐 [Live Demo](https://hieudoanm.github.io/nothing.tech/)
+- 🌐 [Live Demo](https://hieudoanm.github.io/svg/)
 
 ## 🚀 4. Usage
 
-- 🌐 [Web](https://hieudoanm.github.io/nothing.tech/)
-- 💻 [CLI](https://github.com/hieudoanm/nothing.tech/releases)
-- 📱 [Mobile](https://github.com/hieudoanm/nothing.tech/releases)
-- 🖥️ [Desktop](https://github.com/hieudoanm/nothing.tech/releases)
+- 🌐 [Web](https://hieudoanm.github.io/svg/)
+- 💻 [CLI](https://github.com/hieudoanm/svg/releases)
+- 📱 [Mobile](https://github.com/hieudoanm/svg/releases)
+- 🖥️ [Desktop](https://github.com/hieudoanm/svg/releases)
 
 ## 🛠️ 5. Development Stack
 

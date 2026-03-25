@@ -1,266 +1,267 @@
-import { NothingApp } from '@nothing/types';
 import { NextPage } from 'next';
-import Link from 'next/link';
-import {
-  FaBus,
-  FaCalculator,
-  FaCalendarDays,
-  FaChartLine,
-  FaClock,
-  FaCompass,
-  FaEnvelopesBulk,
-  FaFileLines,
-  FaFileZipper,
-  FaFirefoxBrowser,
-  FaFutbol,
-  FaGamepad,
-  FaGear,
-  FaHeart,
-  FaHouseChimney,
-  FaImages,
-  FaLanguage,
-  FaMapLocationDot,
-  FaMessage,
-  FaMobile,
-  FaMusic,
-  FaNewspaper,
-  FaPalette,
-  FaPhone,
-  FaRectangleList,
-  FaTemperatureFull,
-  FaWallet,
-  FaYoutube,
-} from 'react-icons/fa6';
+import Head from 'next/head';
+import { useCallback, useState } from 'react';
+
+const DEFAULT_SVG = `<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6" />
+      <stop offset="100%" stop-color="#EC4899" />
+    </linearGradient>
+  </defs>
+  <rect x="50" y="50" width="300" height="300" rx="40" fill="url(#gradient)" />
+  <circle cx="200" cy="200" r="80" fill="white" fill-opacity="0.2" />
+  <text x="200" y="215" font-family="sans-serif" font-size="24" fill="white" text-anchor="middle" font-weight="bold">SVG EDITOR</text>
+</svg>`;
 
 const AppPage: NextPage = () => {
-  const apps: NothingApp[] = [
-    {
-      id: 'browser',
-      href: 'browser',
-      name: 'browser',
-      shortName: 'browser',
-      icon: <FaFirefoxBrowser className="text-2xl" />,
-    },
-    {
-      id: 'calendar',
-      href: 'calendar',
-      name: 'calendar',
-      shortName: 'calendar',
-      icon: <FaCalendarDays className="text-2xl" />,
-    },
-    {
-      id: 'calculator',
-      href: 'calculator',
-      name: 'calculator',
-      shortName: 'calculator',
-      icon: <FaCalculator className="text-2xl" />,
-    },
-    {
-      id: 'clock',
-      href: 'clock',
-      name: 'clock',
-      shortName: 'clock',
-      icon: <FaClock className="text-2xl" />,
-    },
-    {
-      id: 'colors',
-      href: 'colors',
-      name: 'colors',
-      shortName: 'colors',
-      icon: <FaPalette className="text-2xl" />,
-    },
-    {
-      id: 'compass',
-      href: 'compass',
-      name: 'compass',
-      shortName: 'compass',
-      icon: <FaCompass className="text-2xl" />,
-    },
-    {
-      id: 'devices',
-      href: 'devices',
-      name: 'devices',
-      shortName: 'devices',
-      icon: <FaMobile className="text-2xl" />,
-    },
-    {
-      id: 'files',
-      href: 'files',
-      name: 'files',
-      shortName: 'files',
-      icon: <FaFileZipper className="text-2xl" />,
-    },
-    {
-      id: 'fitness',
-      href: 'fitness',
-      name: 'fitness',
-      shortName: 'fitness',
-      icon: <FaHeart className="text-2xl" />,
-    },
-    {
-      id: 'games',
-      href: 'games',
-      name: 'games',
-      shortName: 'games',
-      icon: <FaGamepad className="text-2xl" />,
-    },
-    {
-      id: 'health',
-      href: 'health',
-      name: 'health',
-      shortName: 'health',
-      icon: <FaTemperatureFull className="text-2xl" />,
-    },
-    {
-      id: 'home',
-      href: 'home',
-      name: 'home',
-      shortName: 'home',
-      icon: <FaHouseChimney className="text-2xl" />,
-    },
-    {
-      id: 'mail',
-      href: 'mail',
-      name: 'mail',
-      shortName: 'mail',
-      icon: <FaEnvelopesBulk className="text-2xl" />,
-    },
-    {
-      id: 'maps',
-      href: 'maps',
-      name: 'maps',
-      shortName: 'maps',
-      icon: <FaMapLocationDot className="text-2xl" />,
-    },
-    {
-      id: 'messages',
-      href: 'messages',
-      name: 'messages',
-      shortName: 'messages',
-      icon: <FaMessage className="text-2xl" />,
-    },
-    {
-      id: 'music',
-      href: 'music',
-      name: 'music',
-      shortName: 'music',
-      icon: <FaMusic className="text-2xl" />,
-    },
-    {
-      id: 'news',
-      href: 'news',
-      name: 'news',
-      shortName: 'news',
-      icon: <FaNewspaper className="text-2xl" />,
-    },
-    {
-      id: 'notes',
-      href: 'notes',
-      name: 'notes',
-      shortName: 'notes',
-      icon: <FaFileLines className="text-2xl" />,
-    },
-    {
-      id: 'phone',
-      href: 'phone',
-      name: 'phone',
-      shortName: 'phone',
-      icon: <FaPhone className="text-2xl" />,
-    },
-    {
-      id: 'photos',
-      href: 'photos',
-      name: 'photos',
-      shortName: 'photos',
-      icon: <FaImages className="mx-auto text-2xl" />,
-    },
-    {
-      id: 'settings',
-      href: 'settings',
-      name: 'settings',
-      shortName: 'settings',
-      icon: <FaGear className="text-2xl" />,
-    },
-    {
-      id: 'sports',
-      href: 'sports',
-      name: 'sports',
-      shortName: 'sports',
-      icon: <FaFutbol className="text-2xl" />,
-    },
-    {
-      id: 'stock',
-      href: 'stock',
-      name: 'stock',
-      shortName: 'stock',
-      icon: <FaChartLine className="text-2xl" />,
-    },
-    {
-      id: 'tasks',
-      href: 'tasks',
-      name: 'tasks',
-      shortName: 'tasks',
-      icon: <FaRectangleList className="text-2xl" />,
-    },
-    {
-      id: 'translate',
-      href: 'translate',
-      name: 'translate',
-      shortName: 'translate',
-      icon: <FaLanguage className="text-2xl" />,
-    },
-    {
-      id: 'transportation',
-      href: 'transportation',
-      name: 'transportation',
-      shortName: 'transportation',
-      icon: <FaBus className="text-2xl" />,
-    },
-    {
-      id: 'videos',
-      href: 'videos',
-      name: 'videos',
-      shortName: 'videos',
-      icon: <FaYoutube className="text-2xl" />,
-    },
-    {
-      id: 'wallet',
-      href: 'wallet',
-      name: 'wallet',
-      shortName: 'wallet',
-      icon: <FaWallet className="text-2xl" />,
-    },
-  ];
+  const [svgCode, setSvgCode] = useState(DEFAULT_SVG);
+  const [isCopied, setIsCopied] = useState(false);
+  const [bgMode, setBgMode] = useState<
+    'grid' | 'white' | 'black' | 'transparent'
+  >('grid');
+
+  const handleCopy = useCallback(() => {
+    navigator.clipboard.writeText(svgCode).then(() => {
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 2000);
+    });
+  }, [svgCode]);
+
+  const handleDownload = useCallback(() => {
+    const blob = new Blob([svgCode], { type: 'image/svg+xml' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'icon.svg';
+    link.click();
+    URL.revokeObjectURL(url);
+  }, [svgCode]);
+
+  const handleFormat = useCallback(() => {
+    // Simple naive formatter for SVG
+    const formatted = svgCode
+      .replace(/>\s+</g, '><')
+      .replace(/></g, '>\n<')
+      .split('\n')
+      .map((line) => line.trim())
+      .join('\n');
+    setSvgCode(formatted);
+  }, [svgCode]);
 
   return (
-    <div className="h-screen w-screen overflow-hidden md:h-screen">
-      <div className="container mx-auto flex h-full flex-col gap-y-4 p-4 md:gap-y-8 md:p-8">
-        <div className="grid h-full grid-cols-4 grid-rows-7 gap-4 md:grid-cols-7 md:grid-rows-4 md:gap-8">
-          {apps.map(({ id = '', href = '', name = '', shortName = '', icon = <>
+    <div className="bg-base-300 text-base-content selection:bg-primary/30 flex min-h-screen flex-col font-sans">
+      <Head>
+        <title>SVG Luxury Editor</title>
+      </Head>
 
-              </> }) => {
-            return (
-              <div key={id} className="col-span-1 row-span-1">
-                <div className="flex h-full items-center justify-center">
-                  <Link
-                    href={`/${href}`}
-                    className="flex flex-col items-center gap-y-1 md:gap-y-2">
-                    <div className="flex aspect-square w-12 items-center justify-center overflow-hidden rounded-full border border-neutral-800 md:w-16">
-                      {icon}
-                    </div>
-                    <p className="w-full truncate text-center text-xs font-semibold md:text-sm">
-                      <span className="inline lowercase md:hidden">
-                        {shortName}
-                      </span>
-                      <span className="hidden md:inline">{name}</span>
-                    </p>
-                  </Link>
+      {/* Navbar */}
+      <header className="navbar bg-base-100/80 border-base-200 sticky top-0 z-50 border-b px-4 shadow-lg backdrop-blur-md md:px-6">
+        <div className="flex-1">
+          <div className="flex items-center gap-3 md:gap-4">
+            <div className="from-primary via-secondary to-accent shadow-primary/20 flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br text-white shadow-xl">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round">
+                <path d="m11 20-3.5-3.5a1 1 0 0 1 0-1.4l10.1-10.1a1 1 0 0 1 1.4 0L22.5 8.5a1 1 0 0 1 0 1.4L12.4 20a1 1 0 0 1-1.4 0z" />
+                <path d="M18 5q-1.5 1.5-3 3" />
+                <rect x="2" y="14" width="8" height="8" rx="2" />
+              </svg>
+            </div>
+            <div>
+              <h1 className="from-primary to-accent bg-gradient-to-r bg-clip-text text-lg font-black tracking-tighter text-transparent uppercase md:text-xl">
+                SVG Pro{' '}
+                <span className="text-base-content/40 font-light">Studio</span>
+              </h1>
+              <p className="text-base-content/30 -mt-1 hidden text-[10px] font-bold tracking-[0.2em] md:block">
+                PROFESSIONAL DESIGNS
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="flex-none gap-2 md:gap-4">
+          <div className="bg-base-200 mr-2 hidden items-center gap-1 rounded-lg p-1 sm:flex">
+            {(['grid', 'white', 'black', 'transparent'] as const).map(
+              (mode) => (
+                <button
+                  key={mode}
+                  onClick={() => setBgMode(mode)}
+                  className={`btn btn-xs rounded-md border-none ${bgMode === mode ? 'bg-base-100 text-primary shadow-sm' : 'hover:bg-base-100/50 bg-transparent'}`}>
+                  {mode.charAt(0).toUpperCase()}
+                </button>
+              )
+            )}
+          </div>
+          <button
+            onClick={handleFormat}
+            className="btn btn-ghost btn-sm tooltip tooltip-bottom"
+            data-tip="Beautify SVG">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round">
+              <path d="M21 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2" />
+              <path d="M3 17v2a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-2" />
+              <path d="M12 11h4" />
+              <path d="M12 7h4" />
+              <path d="M12 15h4" />
+              <path d="M8 7H7a1 1 0 0 0-1 1v2.172a2 2 0 0 1-.586 1.414L4 13l1.414 1.414A2 2 0 0 1 6 15.828V18a1 1 0 0 0 1 1h1" />
+            </svg>
+          </button>
+          <button
+            onClick={handleCopy}
+            className={`btn ${isCopied ? 'btn-success' : 'btn-primary'} btn-sm shadow-primary/20 rounded-full px-5 shadow-lg transition-all duration-500`}>
+            {isCopied ? 'Copied' : 'Copy'}
+          </button>
+          <button
+            onClick={handleDownload}
+            className="btn btn-secondary btn-sm shadow-secondary/20 rounded-full px-5 shadow-lg">
+            Export
+          </button>
+        </div>
+      </header>
+
+      {/* Main content grid */}
+      <main className="grid flex-1 grid-cols-1 overflow-hidden lg:grid-cols-2">
+        {/* Left: Editor */}
+        <div className="border-base-content/5 bg-base-200/50 relative flex flex-col overflow-hidden border-r">
+          <div className="bg-base-300/50 border-base-content/5 sticky top-0 z-20 flex items-center justify-between border-b px-4 py-3 backdrop-blur-sm">
+            <span className="text-base-content/40 flex items-center gap-2 text-[10px] font-black tracking-[0.2em] uppercase">
+              <span className="bg-primary h-1.5 w-1.5 animate-pulse rounded-full"></span>
+              SVG Source
+            </span>
+            <div className="flex gap-1.5">
+              <div className="bg-base-content/10 h-2.5 w-2.5 rounded-full"></div>
+              <div className="bg-base-content/10 h-2.5 w-2.5 rounded-full"></div>
+              <div className="bg-base-content/10 h-2.5 w-2.5 rounded-full"></div>
+            </div>
+          </div>
+          <div className="relative flex-1">
+            <textarea
+              value={svgCode}
+              onChange={(e) => setSvgCode(e.target.value)}
+              className="selection:bg-primary/20 absolute inset-0 h-full w-full resize-none overflow-auto border-none bg-transparent p-6 font-mono text-sm leading-relaxed transition-all outline-none focus:ring-0 md:p-8"
+              spellCheck={false}
+              placeholder="Paste your SVG code here..."
+            />
+          </div>
+        </div>
+
+        {/* Right: Preview */}
+        <div className="bg-base-300 group relative flex flex-col overflow-hidden">
+          <div className="bg-base-300/50 border-base-content/5 sticky top-0 z-20 border-b px-4 py-3 backdrop-blur-sm">
+            <span className="text-base-content/40 text-[10px] font-black tracking-[0.2em] uppercase">
+              Render Canvas
+            </span>
+          </div>
+
+          <div
+            className={`flex flex-1 items-center justify-center overflow-auto p-8 transition-colors duration-500 lg:p-20 ${bgMode === 'grid' ? 'bg-[radial-gradient(circle,rgba(0,0,0,0.1)_1px,transparent_1px)] bg-[length:30px_30px]' : ''} ${bgMode === 'white' ? 'bg-white' : ''} ${bgMode === 'black' ? 'bg-zinc-950' : ''} ${bgMode === 'transparent' ? 'bg-transparent' : ''} `}>
+            <div className="group/canvas relative">
+              {/* Glass container for SVG */}
+              <div
+                className={`relative transition-all duration-700 hover:scale-[1.03] ${bgMode === 'black' ? 'shadow-[0_0_50px_rgba(255,255,255,0.05)]' : 'shadow-2xl shadow-black/20'} `}>
+                {/* SVG Container */}
+                <div
+                  className="animate-in fade-in zoom-in flex h-full w-full items-center justify-center duration-500"
+                  dangerouslySetInnerHTML={{ __html: svgCode }}
+                />
+              </div>
+
+              {/* Status Indicator */}
+              <div className="absolute -top-4 -right-4 z-10">
+                <div className="badge badge-primary badge-sm shadow-primary/20 gap-1.5 border-none px-4 py-3.5 text-[9px] font-bold tracking-widest shadow-xl">
+                  <div className="h-1 w-1 animate-ping rounded-full bg-white"></div>
+                  LIVE VIEW
                 </div>
               </div>
-            );
-          })}
+            </div>
+          </div>
+
+          {/* Zoom/Reset controls float */}
+          <div className="bg-base-100/60 absolute bottom-10 left-1/2 flex -translate-x-1/2 translate-y-4 items-center gap-2 rounded-2xl border border-white/10 p-1.5 opacity-0 shadow-2xl backdrop-blur-xl transition-all group-hover:translate-y-0 group-hover:opacity-100">
+            <button
+              onClick={() => setSvgCode(DEFAULT_SVG)}
+              className="btn btn-circle btn-ghost btn-sm tooltip"
+              data-tip="Reset">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                <path d="M3 3v5h5" />
+              </svg>
+            </button>
+            <div className="divider divider-horizontal mx-0"></div>
+            <div className="px-3 text-[10px] font-black tracking-widest uppercase opacity-50">
+              Preview Mode
+            </div>
+          </div>
         </div>
-      </div>
+      </main>
+
+      {/* Footer Area with Presets/Tools */}
+      <footer className="bg-base-100/50 border-base-200 z-30 flex flex-wrap items-center gap-6 border-t px-6 py-5 backdrop-blur-md">
+        <div className="flex items-center gap-3">
+          <span className="text-base-content/40 text-[10px] font-black tracking-widest uppercase">
+            Library
+          </span>
+          <div className="flex gap-2">
+            {[
+              { name: 'Modern', code: DEFAULT_SVG },
+              {
+                name: 'Galaxy',
+                code: `<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg"><rect width="100%" height="100%" fill="#020617"/><g transform="translate(200,200)"><circle r="140" fill="none" stroke="#3b82f6" stroke-width="0.5" stroke-dasharray="1 10"/><circle r="100" fill="none" stroke="#8b5cf6" stroke-width="1" stroke-dasharray="5 15" opacity="0.5"/><circle r="60" fill="none" stroke="#ec4899" stroke-width="2" stroke-dasharray="10 20"/><circle r="20" fill="#f43f5e" filter="blur(8px)"/><circle r="6" fill="white"/></g></svg>`,
+              },
+              {
+                name: 'Aurora',
+                code: `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path fill="#8B5CF6" d="M44.7,-76.4C58.2,-69.2,70,-58.5,77.4,-45.5C84.7,-32.5,87.7,-17.2,85.1,-2.6C82.5,12,74.3,25.9,64.8,38.2C55.3,50.5,44.6,61.1,32.1,68.2C19.7,75.3,5.5,78.9,-9.4,77.5C-24.3,76.1,-39.8,69.7,-52.2,59.8C-64.6,49.9,-73.9,36.5,-78.9,21.8C-83.9,7.1,-84.6,-8.8,-79.9,-23.5C-75.2,-38.2,-65.1,-51.7,-52.1,-59.1C-39.1,-66.5,-23.2,-67.7,-8.4,-75.4C6.5,-83.1,21.3,-97.3,44.7,-76.4Z" transform="translate(100 100)" filter="blur(4px)" /></svg>`,
+              },
+              {
+                name: 'Blueprint',
+                code: `<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#2563eb"/><path d="M0 50h100M50 0v100" stroke="#60a5fa" stroke-width="0.5"/><path d="M20 20h60v60h-60z" fill="none" stroke="white" stroke-width="1.5" stroke-dasharray="4 2"/><circle cx="50" cy="50" r="25" fill="none" stroke="white" stroke-width="1"/></svg>`,
+              },
+            ].map((p) => (
+              <button
+                key={p.name}
+                onClick={() => setSvgCode(p.code)}
+                className="btn btn-xs border-base-content/10 hover:border-primary/50 hover:bg-primary/5 rounded-full px-4 font-serif lowercase italic transition-all">
+                {p.name}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="divider divider-horizontal mx-0 hidden h-8 opacity-20 lg:block"></div>
+
+        <div className="ml-auto flex items-center gap-4">
+          <div className="text-base-content/30 hidden text-[9px] font-bold tracking-widest uppercase md:block">
+            Status: <span className="text-success">Perfectly Validated</span>
+          </div>
+          <div className="badge badge-outline border-base-content/10 rounded-full py-3 font-mono text-[9px] opacity-60">
+            {svgCode.length} BYTES
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };

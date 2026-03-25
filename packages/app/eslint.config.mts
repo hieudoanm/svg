@@ -1,14 +1,13 @@
 import { defineConfig, globalIgnores } from 'eslint/config';
 
 const eslintConfig = defineConfig([
+  // Override default ignores of eslint-config-next.
   globalIgnores([
+    // Default ignores of eslint-config-next:
     '.next/**',
-    'build/**',
-    'docs/**',
-    'mobile/**',
-    'node_modules/**',
     'out/**',
-    'public/workers/**',
+    'build/**',
+    'mobile/**',
     'src-tauri/**',
     'next-env.d.ts',
     'jest.config.ts',

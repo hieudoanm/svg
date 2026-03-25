@@ -1,8 +1,8 @@
-import '@nothing/styles/globals.css';
+import '@svg/styles/globals.css';
 import type { AppProps } from 'next/app';
-import Head from 'next/head';
-import { FC } from 'react';
 import { Geist, Geist_Mono } from 'next/font/google';
+import Head from 'next/head';
+import { FC, useEffect } from 'react';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -15,13 +15,18 @@ const geistMono = Geist_Mono({
 });
 
 const App: FC<AppProps> = ({ Component, pageProps }) => {
+  useEffect(() => {
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js');
+    }
+  }, []);
+
   return (
     <>
       <Head>
-        <title>Nothing | Widgets</title>
+        <title>SVG</title>
         <link rel="icon" href="/favicon.ico" />
         <link rel="manifest" href="/manifest.json" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <div className={`${geistSans.className} ${geistMono.className}`}>
         <Component {...pageProps} />
