@@ -22,7 +22,7 @@
     "url": "https://github.com/hieudoanm/svg/issues"
   },
   "homepage": "https://hieudoanm.github.io/svg",
-  "packageManager": "pnpm@10.33.0",
+  "packageManager": "pnpm@10.33.1",
   "engines": {
     "node": "25.9.0",
     "vscode": "1.999.0"
